@@ -1,10 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Anvi Technologies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Technologies | Corporate Portal</title>
+    <style>
+        /* Modern CSS Stylesheet embedded in one file */
+        :root {
+            --primary: #0f172a;
+            --secondary: #2563eb;
+            --accent: #38bdf8;
+            --text: #334155;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+        }
+
+        /* Main Section Container */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 70vh;
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Component Elements */
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #64748b;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Anvi Technologies</h1>
-    <p>Automated DevOps Deployment Successful!</p>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">ABC<span>Technologies</span></div>
+            <nav>
+                <ul>
+                    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+                    <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+                    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+                    <li><a onclick="showPage('careers')" id="nav-careers">Careers</a></li>
+                    <li><a onclick="showPage('gallery')" id="nav-gallery">Gallery</a></li>
+                    <li><a onclick="showPage('contact')" id="nav-contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="page-section active">
+            <h1>Automated Deployment Pipeline Active</h1>
+            <p>Welcome to ABC Technologies. Our operational workflow leverages a fully automated DevOps pipeline running collaborative version control, continuous integration, containerized infrastructure via Docker, orchestration inside Kubernetes, and real-time environment analytics[cite: 47].</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Container Architecture</h3>
+                    <p>Applications are encapsulated inside high-performance, lightweight isolation environments[cite: 52].</p>
+                </div>
+                <div class="card">
+                    <h3>Orchestration Cluster</h3>
+                    <p>Automated scaling, traffic balancing, and self-healing systems managed by Kubernetes pods[cite: 48, 53].</p>
+                </div>
+                <div class="card">
+                    <h3>Continuous Monitoring</h3>
+                    <p>Live health indicators tracked directly into visual infrastructure health displays[cite: 48, 57].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <h1>About Our Architecture</h1>
+            <p>ABC Technologies focuses on delivering rapid software releases through streamlined engineering workflows. Our automated continuous testing and structural integrity parameters minimize deployment disruption across all organizational systems[cite: 46, 47].</p>
+        </section>
+
+        <section id="services" class="page-section">
+            <h1>Our Core Engineering Capabilities</h1>
+            <div class="grid">
+                <div class="card">
+                    <h3>CI/CD Implementation</h3>
+                    <p>Automating complete verification matrices directly from collaborative pushes to execution readiness[cite: 46].</p>
+                </div>
+                <div class="card">
+                    <h3>Infrastructure Optimization</h3>
+                    <p>Architecting elastic environments to seamlessly scale according to system request variations[cite: 126, 127].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers" class="page-section">
+            <h1>Join Our Systems Engineering Team</h1>
+            <p>We are searching for bright cloud platform engineers, site reliability minds, and automation specialists to build resilient delivery architectures.</p>
+        </section>
+
+        <section id="gallery" class="page-section">
+            <h1>System Status Visualizations</h1>
+            <p>Environment nodes, visual performance tracking data matrices, and containerized deployment trees are processing continuously[cite: 48, 56].</p>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h1>Connect with System Admins</h1>
+            <p>For operations center escalations, connectivity monitoring queries, or cluster anomalies, reach out to our platform architecture division[cite: 48].</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ABC Technologies. Managed DevOps Pipeline Framework. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(sectionId) {
+            // Hide all active view segments
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Remove emphasis styles from previous nav links
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Display requested view segment
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Apply active visibility styling to clicked link
+            const targetNavLink = document.getElementById(`nav-${sectionId}`);
+            if (targetNavLink) {
+                targetNavLink.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
